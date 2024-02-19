@@ -1,0 +1,49 @@
+package pbo.pkg1;
+
+import java.util.Scanner;
+
+public class PBO1 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Masukkan pecahan pertama (misal: 1/2):");
+        String pecahan1 = scanner.nextLine();
+        System.out.println("Masukkan pecahan kedua (misal: 1/3):");
+        String pecahan2 = scanner.nextLine();
+        System.out.println("Masukkan pecahan ketiga (misal: 1/4):");
+        String pecahan3 = scanner.nextLine();
+
+        // Parsing pecahan menjadi bilangan pembilang dan penyebut
+        String[] pec1 = pecahan1.split("/");
+        String[] pec2 = pecahan2.split("/");
+        String[] pec3 = pecahan3.split("/");
+
+        int pen1 = Integer.parseInt(pec1[0]);
+        int pem1 = Integer.parseInt(pec1[1]);
+        int pen2 = Integer.parseInt(pec2[0]);
+        int pem2 = Integer.parseInt(pec2[1]);
+        int pen3 = Integer.parseInt(pec3[0]);
+        int pem3 = Integer.parseInt(pec3[1]);
+
+        // Penjumlahan
+        int sumPen = pen1 * pem2 * pem3 + pen2 * pem1 * pem3 + pen3 * pem1 * pem2;
+        int sumPem = pem1 * pem2 * pem3;
+        System.out.println("Hasil penjumlahan: " + sumPen + "/" + sumPem);
+
+        // Pengurangan
+        int subPen = pen1 * pem2 * pem3 - pen2 * pem1 * pem3 - pen3 * pem1 * pem2;
+        int subPem = pem1 * pem2 * pem3;
+        System.out.println("Hasil pengurangan: " + subPen + "/" + subPem);
+
+        // Perkalian
+        int mulPen = pen1 * pen2 * pen3;
+        int mulPem = pem1 * pem2 * pem3;
+        System.out.println("Hasil perkalian: " + mulPen + "/" + mulPem);
+
+        // Pembagian
+        int divPen = pen1 * pem2 * pem3;
+        int divPem = pem1 * pen2 * pen3;
+        System.out.println("Hasil pembagian: " + divPen + "/" + divPem);
+    }
+}
